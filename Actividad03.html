@@ -27,6 +27,8 @@
             div > p {
                 margin: 1rem;
             }
+          
+          
         </style>
     </head>
     <body>
@@ -59,7 +61,9 @@
                 7 en 10, como sigue:
             </p>
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 16" id="personas"></svg>
+<!-- Al cambio de los pixeles de iconos, tengrá q cambiar el la caja de viewbox y la ecuación de transformación-->
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 24" id="personas"></svg>
 
             <p>En la presentación gráfica del dato de 7 en 10 se utilizó un <a href="https://datavizcatalogue.com/ES/metodos/grafico_de_pictogramas.html" target="_blank">Gráfico de pictogramas</a></p>
         </div>
@@ -67,13 +71,12 @@
             for (let x = 0; x < 10; x++) {
                 if (x < 7) {
                     document.querySelector("#personas").innerHTML 
-                    += `<g transform ="translate(${x * 16} 0)">
+                    += `<g transform ="translate(${x * 24} 0)" fill="none" stroke="#1a237e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle> <polyline points="17 11 19 13 23 9"></polyline> </g>
 
-                        <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207" fill="#1a237e"/>
-
-                        <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" fill="#1a237e"></g>`;
+                         ></g>`;
                 } else {
-                    document.querySelector("#personas").innerHTML += `<path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M6 6.75v8.5a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v2.75a.75.75 0 0 0 1.5 0v-2.5a.25.25 0 0 1 .5 0" fill="#9fa8da" transform ="translate(${x * 16} 0)"/>`;
+                    document.querySelector("#personas").innerHTML 
+                    += `<g  " transform ="translate(${x * 24} 0)" fill="none" stroke="#9fa8da" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="18" y1="8" x2="23" y2="13"></line><line x1="23" y1="8" x2="18" y2="13"></line> </g>`;
                 }
             }
         </script>
